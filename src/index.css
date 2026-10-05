@@ -5,13 +5,28 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    font-size: 16px;
   }
+
   body {
     font-family: 'Jost', sans-serif;
     background-color: #f7f7f5;
     color: #1a1a19;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    letter-spacing: -0.04em;
+    line-height: 0.96;
+    font-weight: 500;
+  }
+
+  p, span, a, button, input, select, textarea {
+    font-family: 'Jost', sans-serif;
   }
 }
 
@@ -21,7 +36,7 @@
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3 text-sm font-medium tracking-wide text-[#fffaf6] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/15 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/30 bg-[#1d1414]/60 px-6 py-3 text-sm font-medium tracking-wide text-white shadow-[0_8px_20px_rgba(0,0,0,0.18)] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#251a1a]/70 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
   }
 
   .btn-ghost {

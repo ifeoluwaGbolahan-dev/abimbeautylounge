@@ -20,11 +20,11 @@ export default function Hero() {
             Premium beauty studio
           </p>
 
-          <h1 className="text-left font-serif text-[3.2rem] sm:text-[4.8rem] md:text-[6.2rem] lg:text-[8.3rem] font-light text-[#fffdfb] leading-[0.78] tracking-[-0.08em] mb-5 sm:mb-6 drop-shadow-[0_5px_20px_rgba(0,0,0,0.35)]">
+          <h1 className="mb-5 text-left font-serif text-[3.2rem] font-medium leading-[0.8] tracking-[-0.08em] text-[#fffdfb] drop-shadow-[0_5px_20px_rgba(0,0,0,0.35)] sm:text-[4.8rem] sm:leading-[0.9] md:text-[6.2rem] lg:text-[8.3rem]">
             We make you glow with confidence.
           </h1>
 
-          <p className="max-w-[30rem] text-left text-base sm:text-lg text-[#fffdfb] leading-relaxed mb-7 sm:mb-8 drop-shadow-[0_2px_8px_rgba(0,0,0,0.24)] font-medium [text-shadow:0_2px_12px_rgba(0,0,0,0.28)]">
+          <p className="mb-7 max-w-[30rem] text-left text-base font-medium leading-relaxed text-[#fffdfb] drop-shadow-[0_2px_8px_rgba(0,0,0,0.24)] [text-shadow:0_2px_12px_rgba(0,0,0,0.28)] sm:text-lg sm:leading-8">
             Lashes, brows, facials, nails and bridal glam tailored for women who want to glow with confidence.
           </p>
 
