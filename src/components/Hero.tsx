@@ -15,13 +15,14 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 w-full pt-24 pb-16 sm:pt-28 sm:pb-20 lg:px-8">
-        <div className="w-full max-w-[60%] min-w-[280px] text-left sm:max-w-[62%] lg:max-w-[60%]">
+        <div className="w-full max-w-[60%] min-w-[280px] pl-1 text-left sm:max-w-[62%] sm:pl-2 lg:max-w-[60%] lg:pl-3">
           <p className="mb-5 sm:mb-6 text-left text-[0.62rem] sm:text-sm tracking-[0.12em] uppercase font-medium text-[#fffaf6] drop-shadow-[0_2px_6px_rgba(0,0,0,0.18)]">
             Premium beauty studio
           </p>
 
-          <h1 className="mb-5 text-left font-serif text-[3.2rem] font-medium leading-[0.8] tracking-[-0.08em] text-[#fffdfb] drop-shadow-[0_5px_20px_rgba(0,0,0,0.35)] sm:text-[4.8rem] sm:leading-[0.9] md:text-[6.2rem] lg:text-[8.3rem]">
-            We make you glow with confidence.
+          <h1 className="mb-5 text-left font-serif text-[clamp(3.1rem,5.6vw,6.4rem)] font-medium leading-[0.82] tracking-[-0.07em] text-[#fffdfb] drop-shadow-[0_5px_20px_rgba(0,0,0,0.35)]">
+            <span className="mb-1 block">We make you glow</span>
+            <span className="block">with confidence.</span>
           </h1>
 
           <p className="mb-7 max-w-[30rem] text-left text-base font-medium leading-relaxed text-[#fffdfb] drop-shadow-[0_2px_8px_rgba(0,0,0,0.24)] [text-shadow:0_2px_12px_rgba(0,0,0,0.28)] sm:text-lg sm:leading-8">
