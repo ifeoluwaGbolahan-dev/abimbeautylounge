@@ -41,7 +41,7 @@ export default function Academy() {
             <a
               href="#contact"
               onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
-              className="inline-flex items-center gap-2 bg-primary-700 hover:bg-primary-800 text-neutral-50 px-8 py-4 rounded-full font-medium tracking-wide transition-all duration-300 hover:shadow-xl hover:scale-105 group"
+              className="btn-primary px-8 py-4 group"
             >
               Enquire About Training
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

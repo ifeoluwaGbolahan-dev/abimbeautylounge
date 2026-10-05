@@ -31,10 +31,10 @@ export default function Services() {
               <button
                 key={cat.id}
                 onClick={() => setActiveTab(idx)}
-                className={`px-6 py-3 rounded-full text-sm font-medium tracking-wide transition-all duration-300 ${
+                className={`rounded-full px-6 py-3 text-sm font-medium tracking-wide transition-all duration-300 ${
                   activeTab === idx
-                    ? 'bg-primary-700 text-neutral-50 shadow-lg'
-                    : 'text-neutral-600 hover:text-primary-700'
+                    ? 'bg-primary-700 text-neutral-50 shadow-lg hover:bg-primary-800'
+                    : 'text-neutral-600 hover:text-primary-700 hover:bg-primary-50'
                 }`}
               >
                 {cat.title}
@@ -63,9 +63,6 @@ export default function Services() {
                       alt={service.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-sm rounded-full p-2">
-                      <Icon className="w-4 h-4 text-primary-700" />
-                    </div>
                   </div>
                   <div className="sm:w-3/5 p-6 flex flex-col justify-between">
                     <div>

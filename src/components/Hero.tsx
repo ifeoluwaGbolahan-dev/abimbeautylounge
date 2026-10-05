@@ -1,59 +1,63 @@
-import { Star, ChevronDown, MapPin } from 'lucide-react';
+import { ChevronDown, MapPin } from 'lucide-react';
+import heroImage from '../assets/abim-beauty-hero.jpg';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-[#f0c2b3]">
       <div className="absolute inset-0">
         <img
-          src="https://images.pexels.com/photos/6899554/pexels-photo-6899554.jpeg?auto=compress&cs=tinysrgb&h=1200&w=1920"
-          alt="Abim Beauty Lounge interior"
-          className="w-full h-full object-cover"
+          src={heroImage}
+          alt="Abim Beauty Lounge lash and brow studio"
+          className="w-full h-full object-cover object-center scale-105 opacity-100"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(20,8,8,0.86)_0%,rgba(52,16,14,0.76)_18%,rgba(104,44,34,0.62)_36%,rgba(170,90,67,0.28)_56%,rgba(0,0,0,0)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_18%,rgba(255,255,255,0.12),transparent_24%)]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-32 pb-20">
-        <div className="max-w-2xl">
-          <div className="flex items-center gap-2 mb-6 animate-fade-in-down">
-            <div className="flex">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-4 h-4 fill-accent-500 text-accent-500" />
-              ))}
-            </div>
-            <span className="text-white text-sm tracking-wide drop-shadow-md">5.0 rating on Fresha</span>
-          </div>
-
-          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-light text-neutral-50 leading-[1.1] mb-6 animate-fade-in-up">
-            Where elegance meets
-            <span className="block font-medium text-primary-300 drop-shadow-lg">expertise</span>
-          </h1>
-
-          <p className="text-lg text-white/90 max-w-xl leading-relaxed mb-8 drop-shadow-md animate-fade-in-up" style={{ animationDelay: '0.2s', animationFillMode: 'both' }}>
-            Step into Abim Beauty Lounge, a luxurious space in Akobo, Ibadan designed for those who want to look and feel their best. Nails, lashes, brows, facials, makeup and personalized 1:1 academy training.
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 w-full pt-24 pb-16 sm:pt-28 sm:pb-20 lg:px-8">
+        <div className="w-full max-w-[60%] min-w-[280px] text-left sm:max-w-[62%] lg:max-w-[60%]">
+          <p className="mb-5 sm:mb-6 text-left text-[0.62rem] sm:text-sm tracking-[0.12em] uppercase font-medium text-[#fffaf6] drop-shadow-[0_2px_6px_rgba(0,0,0,0.18)]">
+            Premium beauty studio
           </p>
 
-          <div className="flex flex-wrap gap-4 animate-fade-in-up" style={{ animationDelay: '0.4s', animationFillMode: 'both' }}>
+          <h1 className="text-left font-serif text-[3.2rem] sm:text-[4.8rem] md:text-[6.2rem] lg:text-[8.3rem] font-light text-[#fffdfb] leading-[0.78] tracking-[-0.08em] mb-5 sm:mb-6 drop-shadow-[0_5px_20px_rgba(0,0,0,0.35)]">
+            We make you glow with confidence.
+          </h1>
+
+          <p className="max-w-[30rem] text-left text-base sm:text-lg text-[#fffdfb] leading-relaxed mb-7 sm:mb-8 drop-shadow-[0_2px_8px_rgba(0,0,0,0.24)] font-medium [text-shadow:0_2px_12px_rgba(0,0,0,0.28)]">
+            Lashes, brows, facials, nails and bridal glam tailored for women who want to glow with confidence.
+          </p>
+
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
             <a
               href="#contact"
               onClick={(e) => { e.preventDefault(); document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' }); }}
-              className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-4 rounded-full font-medium tracking-wide transition-all duration-300 hover:shadow-2xl hover:scale-105 drop-shadow-lg"
+              className="btn-primary w-full sm:w-auto px-8 py-3.5 sm:py-4 text-[#fffaf6]"
             >
               Book Appointment
             </a>
             <a
               href="#services"
               onClick={(e) => { e.preventDefault(); document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' }); }}
-              className="border border-white/50 text-white hover:bg-white/15 px-8 py-4 rounded-full font-medium tracking-wide transition-all duration-300 backdrop-blur-sm drop-shadow-lg"
+              className="btn-secondary w-full sm:w-auto px-8 py-3.5 sm:py-4"
             >
               View Services
             </a>
           </div>
 
-          <div className="flex items-center gap-2 mt-10 text-white text-sm animate-fade-in drop-shadow-md" style={{ animationDelay: '0.6s', animationFillMode: 'both' }}>
-            <MapPin className="w-4 h-4 text-primary-400" />
+          <div className="flex items-center gap-2 mt-8 sm:mt-10 text-white text-xs sm:text-sm">
+            <MapPin className="w-4 h-4 text-[#f7f3ed]" />
             <span>Akobo, Ibadan — Open 10:00 AM daily</span>
           </div>
         </div>
+      </div>
+
+      <div className="absolute left-[62%] top-[18%] flex h-28 w-28 items-center justify-center rounded-full bg-[#f5d31a]/90 text-center text-[0.7rem] font-black uppercase leading-[1.04] tracking-[0.05em] text-[#2c1a17]/85 shadow-[0_12px_28px_rgba(0,0,0,0.18)] sm:left-[64%] sm:h-32 sm:w-32 sm:text-[0.78rem] md:flex md:h-40 md:w-40 md:text-[0.9rem] lg:left-[64%] lg:h-44 lg:w-44 lg:text-[1rem]">
+        <span className="flex flex-col justify-center items-center leading-none">
+          <span>Made for</span>
+          <span className="mt-1">your</span>
+          <span className="mt-1">beauty</span>
+        </span>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float">

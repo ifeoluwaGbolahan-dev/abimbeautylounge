@@ -3,10 +3,9 @@ import { createClient } from '@supabase/supabase-js';
 import { Send, CheckCircle, MapPin, Phone, Mail, Clock, Instagram, Facebook, Loader2 } from 'lucide-react';
 import { salonInfo, openingHours, serviceCategories } from '@/data';
 
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
-);
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+const supabase = supabaseUrl && supabaseAnonKey ? createClient(supabaseUrl, supabaseAnonKey) : null;
 
 const allServices = serviceCategories.flatMap(cat => cat.services.map(s => s.name));
 
@@ -15,6 +14,12 @@ export default function Contact() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!supabase) {
+      setStatus('error');
+      return;
+    }
+
     setStatus('submitting');
 
     const formData = new FormData(e.currentTarget);
@@ -236,14 +241,16 @@ export default function Contact() {
 
                   {status === 'error' && (
                     <p className="text-accent-600 text-sm bg-accent-50 px-4 py-3 rounded-xl">
-                      Something went wrong. Please try again or call us directly.
+                      {supabase
+                        ? 'Something went wrong. Please try again or call us directly.'
+                        : 'Booking is currently unavailable until the Supabase environment variables are configured.'}
                     </p>
                   )}
 
                   <button
                     type="submit"
-                    disabled={status === 'submitting'}
-                    className="w-full flex items-center justify-center gap-2 bg-primary-700 hover:bg-primary-800 disabled:opacity-60 text-neutral-50 px-6 py-4 rounded-xl font-medium tracking-wide transition-all duration-300 hover:shadow-xl disabled:hover:shadow-none"
+                    disabled={status === 'submitting' || !supabase}
+                    className="btn-primary w-full rounded-xl px-6 py-4 disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:bg-primary-700"
                   >
                     {status === 'submitting' ? (
                       <>
@@ -253,7 +260,7 @@ export default function Contact() {
                     ) : (
                       <>
                         <Send className="w-4 h-4" />
-                        Request Booking
+                        {supabase ? 'Request Booking' : 'Booking Unavailable'}
                       </>
                     )}
                   </button>

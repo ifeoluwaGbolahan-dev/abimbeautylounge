@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
+import abimLogo from '../assets/Abim_logo.png';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -30,27 +31,24 @@ export default function Navbar() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? 'bg-neutral-50/95 backdrop-blur-md shadow-lg py-3'
-          : 'bg-transparent py-5'
+        scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm py-3' : 'bg-white py-4'
       }`}
     >
       <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a
           href="#home"
           onClick={(e) => { e.preventDefault(); handleNavClick('#home'); }}
-          className="flex items-center gap-2 group"
+          className="flex items-center gap-3 group"
         >
-          <span className={`font-serif text-2xl font-semibold tracking-wide transition-colors ${
-            scrolled ? 'text-primary-800' : 'text-primary-400'
-          }`}>
-            Abim
-          </span>
-          <span className={`font-serif text-2xl font-light tracking-wide transition-colors ${
-            scrolled ? 'text-primary-600 group-hover:text-primary-700' : 'text-neutral-50 group-hover:text-primary-300'
-          }`}>
-            Beauty Lounge
-          </span>
+          <img
+            src={abimLogo}
+            alt="Abim Beauty Lounge logo"
+            className="h-10 w-auto object-contain sm:h-14"
+          />
+          <div className="flex items-center gap-1.5 font-serif text-lg sm:text-2xl leading-none">
+            <span className="font-semibold tracking-wide text-primary-700">Abim</span>
+            <span className="font-light tracking-wide text-primary-600">Beauty Lounge</span>
+          </div>
         </a>
 
         <div className="hidden lg:flex items-center gap-8">
@@ -59,9 +57,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={(e) => { e.preventDefault(); handleNavClick(link.href); }}
-              className={`text-sm font-medium tracking-wide transition-colors relative group ${
-                scrolled ? 'text-neutral-700 hover:text-primary-600' : 'text-neutral-50 hover:text-primary-300'
-              }`}
+              className="text-sm font-medium tracking-wide text-neutral-800 hover:text-primary-700 transition-colors relative group"
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-600 transition-all duration-300 group-hover:w-full" />
@@ -73,7 +69,7 @@ export default function Navbar() {
           <a
             href="#contact"
             onClick={(e) => { e.preventDefault(); handleNavClick('#contact'); }}
-            className="flex items-center gap-2 bg-primary-700 hover:bg-primary-800 text-neutral-50 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 hover:shadow-lg hover:scale-105"
+            className="btn-primary px-5 py-2.5 text-sm"
           >
             <Phone className="w-4 h-4" />
             Book Now
@@ -81,7 +77,7 @@ export default function Navbar() {
         </div>
 
         <button
-          className={`lg:hidden ${scrolled ? 'text-neutral-900' : 'text-neutral-50'}`}
+          className="lg:hidden text-neutral-900"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -94,7 +90,7 @@ export default function Navbar() {
           mobileOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="bg-neutral-50/98 backdrop-blur-md px-6 py-6 flex flex-col gap-4 mt-3 border-t border-neutral-200">
+        <div className="bg-white/98 backdrop-blur-md px-6 py-6 flex flex-col gap-4 mt-3 border-t border-neutral-200">
           {navLinks.map((link) => (
             <a
               key={link.href}

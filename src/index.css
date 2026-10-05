@@ -15,6 +15,20 @@
   }
 }
 
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary-700 px-6 py-3 text-sm font-medium tracking-wide text-neutral-50 shadow-md transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary-800 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 px-6 py-3 text-sm font-medium tracking-wide text-[#fffaf6] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/15 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white px-6 py-3 text-sm font-medium text-neutral-700 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-200 hover:bg-primary-50 hover:text-primary-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-200;
+  }
+}
+
 @layer utilities {
   .font-serif {
     font-family: 'Cormorant Garamond', serif;
