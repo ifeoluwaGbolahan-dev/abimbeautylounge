@@ -1,3 +1,3 @@
-# abimbeautylounge
+# Abim Beauty Lounge
 
-[![Open in Bolt](https://bolt.new/static/open-in-bolt.svg)](https://bolt.new/~/sb1-zk7sxa7e)
+A modern beauty salon landing page built with Vite, React, TypeScript, and Tailwind CSS.
