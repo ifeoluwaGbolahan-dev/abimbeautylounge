@@ -20,7 +20,7 @@ export default function Hero() {
             Premium beauty studio
           </p>
 
-          <h1 className="mb-5 text-left font-serif text-[clamp(3.1rem,5.6vw,6.4rem)] font-medium leading-[0.82] tracking-[-0.07em] text-[#fffdfb] drop-shadow-[0_5px_20px_rgba(0,0,0,0.35)]">
+          <h1 className="mb-5 text-left font-serif text-[2.6rem] font-medium leading-[0.82] tracking-[-0.07em] text-[#fffdfb] drop-shadow-[0_5px_20px_rgba(0,0,0,0.35)] sm:text-[clamp(3.1rem,5.6vw,6.4rem)]">
             <span className="mb-1 block">We make you glow</span>
             <span className="block">with confidence.</span>
           </h1>
